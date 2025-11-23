@@ -57,9 +57,21 @@ header {
   filter: brightness(0) invert(1);
 }
 
-.solid-header .navbar-brand span,
+/* .solid-header .navbar-brand span, */
 .solid-header .nav-link {
   color: #333 !important;
+}
+
+.title-grey{
+  color: var(--grey) !important;
+}
+
+.title-blue{
+  color: var(--blue) !important;
+}
+
+.title-orange{
+  color: var(--orange) !important;
 }
 
 .solid-header .navbar-brand img {
