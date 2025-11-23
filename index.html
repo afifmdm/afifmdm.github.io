@@ -1,1002 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Naratas</title>
 
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-
-    <!-- AOS Animation CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
-      rel="stylesheet"
-    />
-
-    <style>
-      :root {
-        --blue: #0e94d3;
-        --orange: #ef8201;
-        --grey: #898989;
-      }
-
-      body {
-        font-family: "Inter", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 200;
-        font-style: normal;
-        /* font-family: "Inter", sans-serif; */
-        color: #333;
-      }
-
-      #mainHeader {
-        transition: background 0.3s ease, backdrop-filter 0.3s ease,
-          box-shadow 0.3s ease;
-      }
-
-      .transparent-header {
-        background: rgba(255, 255, 255, 0.15) !important;
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
-        box-shadow: none;
-      }
-
-      .solid-header {
-        background: #ffffff !important;
-        backdrop-filter: blur(0px);
-        -webkit-backdrop-filter: blur(0px);
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
-      }
-
-      header {
-        background: #fff;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      }
-
-      .transparent-header .navbar-brand span,
-      .transparent-header .nav-link {
-        color: #fff !important;
-      }
-      .transparent-header .navbar-brand img {
-        filter: brightness(0) invert(1);
-      }
-      .solid-header .navbar-brand span,
-      .solid-header .nav-link {
-        color: #333 !important;
-      }
-      .solid-header .navbar-brand img {
-        filter: none;
-      }
-
-      .owl-carousel.owl-carousel-activity .owl-item.center {
-        transform: scale(1);
-        opacity: 1;
-      }
-      .owl-carousel.owl-carousel-activity .owl-item {
-        transform: scale(0.75);
-        opacity: 0.5;
-        transition: all 0.3s ease;
-      }
-
-      /* Navbar toggler color switch */
-      .transparent-header .navbar-toggler {
-        border-color: #fff !important;
-      }
-      .transparent-header .navbar-toggler-icon {
-        filter: invert(1) brightness(2);
-      }
-
-      .solid-header .navbar-toggler {
-        border-color: #333 !important;
-      }
-      .solid-header .navbar-toggler-icon {
-        filter: none;
-      }
-
-      .navbar-brand span {
-        color: var(--blue);
-        font-weight: 600;
-      }
-
-      .btn-orange {
-        background: var(--orange);
-        color: #fff;
-      }
-
-      .btn-orange:hover {
-        background: #ef8201;
-        color: #fff;
-      }
-
-      .btn-blue-secondary {
-        background: #fff;
-        color: var(--blue);
-      }
-
-      .btn-blue-secondary:hover {
-        background: var(--blue);
-        color: #fff;
-      }
-
-      .text-color-primary {
-        color: #ef8201;
-      }
-
-      .text-color-secondary {
-        color: #0e94d3;
-      }
-
-      .text-color-tertiary {
-        color: #898989;
-      }
-
-      .bg-color-primary {
-        background-color: #ef8201;
-      }
-
-      .bg-color-secondary {
-        background-color: #0e94d3;
-      }
-
-      .bg-color-tertiary {
-        background-color: #898989;
-      }
-
-      .banner-section {
-        background: linear-gradient(
-            rgba(14, 148, 211, 0.8),
-            rgba(14, 148, 211, 0.8)
-          ),
-          url("./assets/img/team/team.jpg");
-        background-size: cover;
-        background-position: center;
-        padding: 180px 0;
-        color: #fff;
-      }
-
-      .section-title {
-        font-weight: 700;
-        margin-bottom: 40px;
-        /* color: var(--blue); */
-      }
-
-      .company-section {
-        background: linear-gradient(
-            rgba(137, 137, 137, 0.8),
-            rgba(137, 137, 137, 0.8)
-          ),
-          url("./assets/img/company.jpg");
-        background-size: cover;
-        background-position: center;
-        padding: 180px 0;
-        color: #fff;
-      }
-
-      .value-box.mission-1 {
-        background: linear-gradient(
-            rgba(255, 136, 0, 0.8),
-            rgba(255, 136, 0, 0.8)
-          ),
-          url("./assets/img/customer_satisfaction.jpg");
-        background-size: cover;
-        background-position: center;
-        /* padding: 140px 0; */
-        color: #fff;
-      }
-
-      .value-box.mission-2 {
-        background: linear-gradient(
-            rgba(14, 148, 211, 0.8),
-            rgba(14, 148, 211, 0.8)
-          ),
-          url("./assets/img/partnership.jpg");
-        background-size: cover;
-        background-position: center;
-        /* padding: 140px 0; */
-        color: #fff;
-      }
-
-      .value-box.value-excellence {
-        background: linear-gradient(
-            rgba(14, 148, 211, 0.8),
-            rgba(14, 148, 211, 0.8)
-          ),
-          url("assets/img/excellence.jpg");
-        background-size: cover;
-        background-position: center;
-        /* padding: 140px 0; */
-        height: 175px;
-        color: #fff;
-      }
-
-      .value-box.value-integrity {
-        background: linear-gradient(
-            rgba(14, 148, 211, 0.8),
-            rgba(14, 148, 211, 0.8)
-          ),
-          url("assets/img/integrity.jpg");
-        background-size: cover;
-        background-position: center;
-        /* padding: 140px 0; */
-        height: 175px;
-        color: #fff;
-      }
-
-      .value-box.value-harmony {
-        background: linear-gradient(
-            rgba(14, 148, 211, 0.8),
-            rgba(14, 148, 211, 0.8)
-          ),
-          url("assets/img/harmony.jpg");
-        background-size: cover;
-        background-position: center;
-        /* padding: 140px 0; */
-        height: 175px;
-        color: #fff;
-      }
-
-      .value-box.value-innovation {
-        background: linear-gradient(
-            rgba(14, 148, 211, 0.8),
-            rgba(14, 148, 211, 0.8)
-          ),
-          url("assets/img/innovation.jpg");
-        background-size: cover;
-        background-position: center;
-        /* padding: 140px 0; */
-        height: 175px;
-        color: #fff;
-      }
-
-      .value-box,
-      .service-box {
-        padding: 25px;
-        border-radius: 12px;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
-        transition: 0.3s;
-      }
-
-      .value-box:hover,
-      .service-box:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-      }
-
-      /* footer {
-        background: #0a3a57;
-        color: #fff;
-        padding: 60px 0;
-      } */
-      footer {
-        border-radius: 56px 56px 0 0;
-        background: linear-gradient(90deg, var(--blue), var(--orange));
-        color: #fff;
-        padding: 60px 0;
-      }
-
-      .whatsapp-float {
-        position: fixed;
-        bottom: 15px;
-        right: 15px;
-        background: #25d366;
-        color: #fff;
-        width: 55px;
-        height: 55px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 28px;
-        box-shadow: 1px 6px 24px 0 rgb(7 94 84 / 24%);
-        z-index: 9999;
-        transition: background-color 0.2s linear;
-      }
-
-      .whatsapp-float:hover {
-        transform: scale(1.3);
-        cursor: pointer;
-      }
-
-      /* CTA strip */
-      .cta-strip {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background: linear-gradient(90deg, var(--blue), var(--orange));
-        color: white;
-        padding: 20px;
-        /* border-radius: 14px; */
-        /* margin: 40px 0; */
-      }
-
-      .client-logo {
-        max-height: 50px;
-      }
-
-      .team {
-        background: linear-gradient(90deg, var(--blue), var(--orange));
-        padding: 60px 0;
-        border-radius: 56px 56px 56px 56px;
-      }
-
-      .team .member {
-        text-align: center;
-        margin-bottom: 20px;
-        /* background: #343a40; */
-        position: relative;
-        overflow: hidden;
-        border-radius: 10px;
-      }
-
-      .team .member .member-info {
-        opacity: 0;
-        position: absolute;
-        bottom: 0;
-        top: 0;
-        left: 0;
-        right: 0;
-        transition: 0.2s;
-      }
-
-      .team .member .member-info-content {
-        position: absolute;
-        left: 35px;
-        right: 0;
-        bottom: 0;
-        transition: bottom 0.4s;
-      }
-
-      .team .member .member-info-content h4 {
-        font-weight: 700;
-        margin-bottom: 2px;
-        font-size: 18px;
-        color: #fff;
-      }
-
-      .team .member .member-info-content span {
-        font-style: italic;
-        display: block;
-        font-size: 13px;
-        color: #fff;
-      }
-
-      .team .member .social {
-        position: absolute;
-        left: -50px;
-        top: 0;
-        bottom: 0;
-        width: 50px;
-        transition: left ease-in-out 0.3s;
-        background: rgba(78, 64, 57, 0.6);
-        text-align: center;
-      }
-
-      .team .member .social a {
-        transition: color 0.3s;
-        display: block;
-        color: #fff;
-        margin-top: 15px;
-      }
-
-      .team .member .social a:hover {
-        color: #eb5d1e;
-      }
-
-      .team .member .social i {
-        font-size: 18px;
-        margin: 0 2px;
-      }
-
-      .team .member:hover .member-info {
-        background: linear-gradient(
-          0deg,
-          rgba(78, 64, 57, 0.95) 0%,
-          rgba(78, 64, 57, 0.95) 15%,
-          rgba(255, 255, 255, 0) 100%
-        );
-        opacity: 1;
-        transition: 0.4s;
-      }
-
-      .team .member:hover .member-info-content {
-        bottom: 30px;
-        transition: bottom 0.4s;
-      }
-
-      .team .member:hover .social {
-        left: 0;
-        transition: left ease-in-out 0.3s;
-      }
-
-      .owl-theme .owl-dots .owl-dot span {
-        background: #ccc !important;
-        /* normal color */
-      }
-
-      .owl-theme .owl-dots .owl-dot.active span,
-      .owl-theme .owl-dots .owl-dot:hover span {
-        background: #eb5d1e !important;
-        /* active/hover color */
-      }
-
-      /*--------------------------------------------------------------
-# Contact Us
---------------------------------------------------------------*/
-      .contact .info {
-        border-top: 3px solid #eb5d1e;
-        border-bottom: 3px solid #eb5d1e;
-        padding: 30px;
-        background: #fff;
-        width: 100%;
-        box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
-      }
-
-      .contact .info i {
-        font-size: 20px;
-        float: left;
-        width: 44px;
-        height: 44px;
-        background: #fdf1ec;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50px;
-        transition: all 0.3s ease-in-out;
-      }
-
-      .contact .info .address i {
-        color: #0e94d3;
-      }
-
-      .contact .info .email i {
-        color: #eb5d1e;
-      }
-
-      .contact .info .phone i {
-        color: #898989;
-      }
-
-      .contact .info h4 {
-        padding: 0 0 0 60px;
-        font-size: 22px;
-        font-weight: 600;
-        margin-bottom: 5px;
-        color: #7a6960;
-      }
-
-      .contact .info p {
-        padding: 0 0 10px 60px;
-        margin-bottom: 20px;
-        font-size: 14px;
-        color: #ab9d95;
-      }
-
-      .contact .info .email p {
-        padding-top: 5px;
-      }
-
-      .contact .info .social-links {
-        padding-left: 60px;
-      }
-
-      .contact .info .social-links a {
-        font-size: 18px;
-        display: inline-block;
-        background: #333;
-        color: #fff;
-        line-height: 1;
-        padding: 8px 0;
-        border-radius: 50%;
-        text-align: center;
-        width: 36px;
-        height: 36px;
-        transition: 0.3s;
-        margin-right: 10px;
-      }
-
-      .contact .info .social-links a:hover {
-        background: #eb5d1e;
-        color: #fff;
-      }
-
-      .contact .info .email:hover i {
-        background: #eb5d1e;
-        color: #fff;
-      }
-
-      .contact .info .address:hover i {
-        background: #0e94d3;
-        color: #fff;
-      }
-
-      .contact .info .phone:hover i {
-        background: #898989;
-        color: #fff;
-      }
-
-      .contact .php-email-form {
-        width: 100%;
-        border-top: 3px solid #eb5d1e;
-        border-bottom: 3px solid #eb5d1e;
-        padding: 30px;
-        background: #fff;
-        box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
-      }
-
-      .contact .php-email-form .form-group {
-        padding-bottom: 8px;
-      }
-
-      .contact .php-email-form .error-message {
-        display: none;
-        color: #fff;
-        background: #ed3c0d;
-        text-align: left;
-        padding: 15px;
-        font-weight: 600;
-      }
-
-      .contact .php-email-form .error-message br + br {
-        margin-top: 25px;
-      }
-
-      .contact .php-email-form .sent-message {
-        display: none;
-        color: #fff;
-        background: #18d26e;
-        text-align: center;
-        padding: 15px;
-        font-weight: 600;
-      }
-
-      .contact .php-email-form .loading {
-        display: none;
-        background: #fff;
-        text-align: center;
-        padding: 15px;
-      }
-
-      .contact .php-email-form .loading:before {
-        content: "";
-        display: inline-block;
-        border-radius: 50%;
-        width: 24px;
-        height: 24px;
-        margin: 0 10px -6px 0;
-        border: 3px solid #18d26e;
-        border-top-color: #eee;
-        -webkit-animation: animate-loading 1s linear infinite;
-        animation: animate-loading 1s linear infinite;
-      }
-
-      .contact .php-email-form input,
-      .contact .php-email-form textarea {
-        border-radius: 0;
-        box-shadow: none;
-        font-size: 14px;
-      }
-
-      .contact .php-email-form input {
-        height: 44px;
-      }
-
-      .contact .php-email-form textarea {
-        padding: 10px 12px;
-      }
-
-      .contact .php-email-form button[type="submit"] {
-        background: #eb5d1e;
-        border: 0;
-        padding: 10px 24px;
-        color: #fff;
-        transition: 0.4s;
-        border-radius: 4px;
-      }
-
-      .contact .php-email-form button[type="submit"]:hover {
-        background: #ef7f4d;
-      }
-
-      @-webkit-keyframes animate-loading {
-        0% {
-          transform: rotate(0deg);
-        }
-
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-
-      @keyframes animate-loading {
-        0% {
-          transform: rotate(0deg);
-        }
-
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-    </style>
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-
-  <body>
-    <!-- HEADER -->
-    <header
-      id="mainHeader"
-      class="navbar-expand-lg fixed-top transparent-header"
-      class="transparent-header"
-    >
-      <nav class="navbar navbar-expand-lg py-3">
-        <div class="container">
-          <a class="navbar-brand d-flex align-items-center" href="#">
-            <img
-              src="./assets/img/logo.png"
-              class="me-2"
-              style="width: 50px; height: 50px"
-            />
-            <span class="d-none d-sm-block">PT Naratas Sinergi Solusindo</span>
-            <span class="d-block d-sm-none">Naratas</span>
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navMenu"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navMenu">
-            <ul class="navbar-nav ms-auto me-4">
-              <li class="nav-item">
-                <a class="nav-link" href="#services">Services</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#portfolio">Portfolio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#team">Team</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#team">Karir</a>
-              </li>
-            </ul>
-            <a href="#contact" class="btn btn-orange px-4">Kontak Kami</a>
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <!-- HEADER -->
-    <!-- <header>
-      <nav class="navbar navbar-expand-lg py-3">
-        <div class="container">
-          <a class="navbar-brand d-flex align-items-center" href="#">
-            <img
-              src="logo.png"
-              class="me-2"
-              style="width: 50px; height: 50px"
-            />
-            <span>PT Naratas Sinergi Solusindo</span>
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navMenu"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navMenu">
-            <ul class="navbar-nav ms-auto me-4">
-              <li class="nav-item">
-                <a class="nav-link" href="#services">Services</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#portfolio">Portfolio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#team">Team</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#team">Karir</a>
-              </li>
-            </ul>
-            <a href="#contact" class="btn btn-orange px-4">Contact Us</a>
-          </div>
-        </div>
-      </nav>
-    </header> -->
-
-    <!-- BANNER -->
-    <section class="banner-section text-center" data-aos="fade-up">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naratas</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- AOS Animation CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header id="mainHeader" class="navbar-expand-lg fixed-top transparent-header" class="transparent-header">
+    <nav class="navbar navbar-expand-lg py-3">
       <div class="container">
-        <h1 class="fw-bold mb-3">Empowering Your Digital Transformation</h1>
-        <p class="lead">
-          Naratas hadir untuk melayani pelanggan dalam meningkatkan infrastruktur Telekomunikasi dan Teknologi Informasi yang mutakhir dan terpercaya.
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="./assets/img/logo.png" class="me-2" style="width: 50px; height: 50px" />
+          <span class="d-none d-sm-block">PT Naratas Sinergi Solusindo</span>
+          <span class="d-block d-sm-none">Naratas</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto me-4">
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#team">Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#team">Karir</a>
+            </li>
+          </ul>
+          <a href="#contact" class="btn btn-orange px-4">Kontak Kami</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- BANNER -->
+  <section class="banner-section text-center" data-aos="fade-up">
+    <div class="container">
+      <h1 class="display-2 fw-bold mb-3">Empowering Your Digital Transformation</h1>
+      <p class="lead">
+        Naratas hadir untuk melayani pelanggan dalam meningkatkan infrastruktur Telekomunikasi dan Teknologi Informasi
+        yang mutakhir dan terpercaya.
+      </p>
+      <a href="#services" class="btn btn-blue-secondary btn-lg mt-3 text-color-secondary fw-bold">
+        <div>Explore Our Services</div>
+        <i class="fa fa-chevron-down bump-effect"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- ABOUT US -->
+  <section class="py-5" id="about">
+    <div class="container" data-aos="fade-up">
+      <h2 class="section-title text-center display-2"><span class="text-color-secondary">Tentang </span>
+        <span class="text-color-primary">Naratas</span>
+      </h2>
+      <div class="card p-3 bg-color-tertiary company-section" style="border-radius: 54px;">
+        <h2 class="pt-5 pt-md-3 pb-3 text-white font-weight-bold text-center">
+          PT Naratas Sinergi Solusindo
+        </h2>
+        <p class="mx-2 text-white pb-3" style="text-align: justify;">
+          Naratas merupakan perusahaan yang bergerak dibidang telekomunikasi dan
+          teknologi informasi dengan berbagai layanan yang terintegrasi. 
+          Kami berkomitmen untuk memberikan solusi terbaik dalam berbagai bidang
+          pekerjaan yang berkaitan dengan telekomunikasi dan teknologi
+          informasi. Dengan dukungan team yang kompeten di setiap bidang, Naratas
+          siap untuk berkontribusi sebagai penyedia jasa layanan telekomunikasi
+          dan berupaya untuk terus berinovasi serta meningkatkan kompetensi
+          melalui pemanfaatan teknologi terbaru guna meningkatkan kualitas
+          solusi layanan bagi pelanggan. Naratas siap untuk terus bergerak dan
+          berubah mengikuti perkembangan kebutuhan telekomunikasi di setiap perkembangan
+          zaman, berpikir fleksibel dan memiliki hasil yang dapat diukur sebagai
+          bukti komitmen kami kepada client. Dengan mengutamakan
+          kepuasan pelanggan, kami siap menjadi mitra unggul bagi Anda.
         </p>
-        <a
-          href="#services"
-          class="btn btn-blue-secondary btn-lg mt-3 text-color-secondary fw-bold"
-          >Explore Our Services</a
-        >
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ABOUT US -->
-    <section class="py-5" id="about">
-      <div class="container" data-aos="fade-up">
-        <h2 class="section-title text-center display-2"><span class="text-color-secondary">Tentang </span>
-            <span class="text-color-primary">Naratas</span></h2>
-        <div class="card p-3 bg-color-tertiary company-section" style="border-radius: 54px;">
-          <h2 class="text-white font-weight-bold text-center">
-            PT Naratas Sinergi Solusindo
-          </h2>
-          <p class="text-justify w-75 mx-auto text-white lead" style="text-align: justify;">
-            Merupakan perusahaan yang bergerak dibidang telekomunikasi dan
-            teknologi informasi dengan berbagai layanan yang terintegrasi yaitu
-            meliputi pengembangan infrastruktur dan teknologi informasi. Kami
-            berkomitmen untuk memberikan solusi terbaik dalam berbagai bidang
-            pekerjaan yang berhubungan dengan telekomunikasi dan teknologi
-            informasi. Dengan dukungan team yang kompeten di setiap bidang, kami
-            siap untuk berkontribusi sebagai penyedia jasa layanan telekomunikasi
-            dan kami berupaya untuk terus berinovasi dan meningkatkan kompetensi
-            melalui pemanfaatan teknologi terbaru guna meningkatkan kualitas
-            solusi layanan bagi pelanggan. Kami siap untuk terus bergerak dan
-            berubah mengikuti perkembangan kebutuhan telekomunikasi di setiap
-            zaman, berpikir fleksibel dan memiliki hasil yang dapat diukur sebagai
-            bukti komitmen kami kepada mitra maupun client. Dengan mengutaman
-            kepuasan pelanggan, kami siap menjadi mitra unggul bagi pelanggan.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- VISION & MISSION -->
-    <section class="py-5 bg-light">
-      <div class="container" data-aos="fade-up">
-        <h2 class="section-title text-center display-2"><span class="text-color-primary">Visi </span><span class="text-color-tertiary">&</span><span class="text-color-secondary"> Misi</span></h2>
-        <p class="text-center lead">Menjadi penyedia jasa maupun layanan telekomunikasi yang terpercaya dan handal di setiap perkembangan zaman.</p>
-        <div class="row">
-          <div class="col-md-6 mb-4">
-            <div class="value-box mission-1 h-100 bg-color-primary text-white">
-              <div class="my-5">
-                <h2 class="fw-bold">MISI 01</h2>
-                <p>
-                  Mengutamakan kepuasan pelanggan dalam memberi pelayanan.
-                </p>
-              </div>
+  <!-- VISION & MISSION -->
+  <section class="py-5 bg-light">
+    <div class="container" data-aos="fade-up">
+      <h2 class="section-title text-center display-2"><span class="text-color-primary">Visi </span><span
+          class="text-color-tertiary">&</span><span class="text-color-secondary"> Misi</span></h2>
+      <p class="text-center lead">Menjadi penyedia jasa maupun layanan telekomunikasi yang terpercaya dan handal di
+        setiap perkembangan zaman.</p>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="value-box mission-1 h-100 bg-color-primary text-white">
+            <div class="my-5">
+              <h2 class="fw-bold">MISI 01</h2>
+              <p>
+                Mengutamakan kepuasan pelanggan dalam memberi pelayanan.
+              </p>
             </div>
           </div>
-          <div class="col-md-6 mb-4">
-            <div class="value-box mission-2 h-100 bg-color-secondary text-white">
-              <div class="my-5">
-                <h2 class="fw-bold">MISI 02</h2>
-                <p>
-                  Menjadi mitra yang amanah dan handal.
-                </p>
-              </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="value-box mission-2 h-100 bg-color-secondary text-white">
+            <div class="my-5">
+              <h2 class="fw-bold">MISI 02</h2>
+              <p>
+                Menjadi mitra yang amanah dan handal.
+              </p>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- OUR VALUES -->
-    <section class="py-5">
-      <div class="container" data-aos="fade-up">
-        <h2 class="section-title display-1 fw-bold text-center text-color-secondary">Our Values</h2>
-        <div class="row">
-          <div class="col-4">
-            <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-              <button class="nav-link fw-bold active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Integrity</button>
-              <button class="nav-link fw-bold" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Innovation</button>
-              <button class="nav-link fw-bold" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Excellence</button>
-              <button class="nav-link fw-bold" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Harmony</button>
-            </div>
+  <!-- OUR VALUES -->
+  <section class="py-5">
+    <div class="container" data-aos="fade-up">
+      <h2 class="section-title display-1 fw-bold text-center text-color-secondary">Our Values</h2>
+      <div class="row">
+        <div class="col-4">
+          <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <button class="nav-link fw-bold active" id="v-pills-home-tab" data-bs-toggle="pill"
+              data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
+              aria-selected="true">Integrity</button>
+            <button class="nav-link fw-bold" id="v-pills-profile-tab" data-bs-toggle="pill"
+              data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
+              aria-selected="false">Innovation</button>
+            <button class="nav-link fw-bold" id="v-pills-messages-tab" data-bs-toggle="pill"
+              data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages"
+              aria-selected="false">Excellence</button>
+            <button class="nav-link fw-bold" id="v-pills-settings-tab" data-bs-toggle="pill"
+              data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings"
+              aria-selected="false">Harmony</button>
           </div>
-          <div class="col-md-6 col-8">
-            <div class="tab-content" id="v-pills-tabContent">
-              <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                <div class="value-box value-integrity text-white">
-                  <h5 class="fw-bold">Integrity</h5>
-                  <p>
-                    We uphold transparency and honesty in every service we deliver.
-                  </p>
-                </div>
+        </div>
+        <div class="col-md-6 col-8">
+          <div class="tab-content" id="v-pills-tabContent">
+            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+              <div class="value-box value-integrity text-white">
+                <h5 class="fw-bold">Integrity</h5>
+                <p>
+                  We uphold transparency and honesty in every service we deliver.
+                </p>
               </div>
-              <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                <div class="value-box value-innovation text-white">
+            </div>
+            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+              <div class="value-box value-innovation text-white">
                 <h5 class="fw-bold">Innovation</h5>
                 <p>
                   We bring creative ideas and modern solutions to your business.
                 </p>
               </div>
-              </div>
-              <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                <div class="value-box value-excellence text-white">
+            </div>
+            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+              <div class="value-box value-excellence text-white">
                 <h5 class="fw-bold">Excellence</h5>
                 <p>We aim to deliver the highest quality in all our work.</p>
               </div>
-              </div>
-              <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-                <div class="value-box value-harmony text-white">
+            </div>
+            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+              <div class="value-box value-harmony text-white">
                 <h5 class="fw-bold">Harmony</h5>
                 <p>We aim to deliver the highest quality in all our work.</p>
               </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- <div class="row text-center">
-          <div class="col-md-4 mb-4">
-            <div class="value-box">
-              <h5 class="fw-bold">Integrity</h5>
-              <p>
-                We uphold transparency and honesty in every service we deliver.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-4 mb-4">
-            <div class="value-box">
-              <h5 class="fw-bold">Innovation</h5>
-              <p>
-                We bring creative ideas and modern solutions to your business.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-4 mb-4">
-            <div class="value-box">
-              <h5 class="fw-bold">Excellence</h5>
-              <p>We aim to deliver the highest quality in all our work.</p>
-            </div>
-          </div>
-          <div class="col-md-4 mb-4">
-            <div class="value-box">
-              <h5 class="fw-bold">Harmony</h5>
-              <p>We aim to deliver the highest quality in all our work.</p>
-            </div>
-          </div>
-        </div> -->
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section class="py-5 bg-light" id="services">
-      <div class="container" data-aos="fade-up">
-        <h2 class="section-title text-center display-2">Layanan</h2>
-        <div class="row">
-          <div class="col-md-6 mb-4" data-aos="zoom-in">
-            <div class="service-box h-100 text-center">
-              <h5 class="fw-bold">Networking</h5>
-              <p>Custom websites with modern standards and top performance.</p>
-            </div>
-          </div>
-          <div class="col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
-            <div class="service-box h-100 text-center">
-              <h5 class="fw-bold">IT Solution</h5>
-              <p>
-                iOS & Android development to scale your business mobile
-                presence.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
-            <div class="service-box h-100 text-center">
-              <h5 class="fw-bold">Procurement of Goods</h5>
-              <p>Seamless integration between systems to boost productivity.</p>
-            </div>
-          </div>
-          <div class="col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
-            <div class="service-box h-100 text-center">
-              <h5 class="fw-bold">Tax Consulting</h5>
-              <p>Seamless integration between systems to boost productivity.</p>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section>
-      <div class="cta-strip">
-        <div>
-          <strong style="font-size: 18px">Tertarik bekerja sama dengan Kami?</strong>
-          <div style="opacity: 0.9">
-            Kami selalu siap bekerja sama dengan Anda.
+  <!-- SERVICES -->
+  <section class="py-5 bg-light" id="services">
+    <div class="container" data-aos="fade-up">
+      <h2 class="text-color-tertiary section-title text-center display-2">Layanan</h2>
+      <div class="row">
+        <div class="col-md-6 mb-4" data-aos="zoom-in">
+          <div class="service-box h-100 text-center">
+            <h5 class="fw-bold">Networking</h5>
+            <p>Custom websites with modern standards and top performance.</p>
           </div>
         </div>
-        <div style="display: flex; gap: 10px">
-          <button class="btn btn-primary">Hubungi Kami</button>
+        <div class="col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="service-box h-100 text-center">
+            <h5 class="fw-bold">IT Solution</h5>
+            <p>
+              iOS & Android development to scale your business mobile
+              presence.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="service-box h-100 text-center">
+            <h5 class="fw-bold">Procurement of Goods</h5>
+            <p>Seamless integration between systems to boost productivity.</p>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="service-box h-100 text-center">
+            <h5 class="fw-bold">Tax Consulting</h5>
+            <p>Seamless integration between systems to boost productivity.</p>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Activity -->
-    <section class="py-5">
-      <div class="container" data-aos="fade-up">
-        <div class="row">
-          <div class="col-md-4 col-12">
-            <h2 class="fw-bold text-center text-color-primary">
-              Aktivitas Kami
-            </h2>
-            <p class="lead">Dalam menjalankan pekerjaan, Kami selalu mengedepankan harmonisasi dan sinergi untuk menghasilkan pekerjaan yang memuaskan bagi setiap pelanggan Kami.</p>
-          </div>
-          <div class="col-md-8 col-12">
-            <div class="owl-carousel owl-theme owl-carousel-activity mt-4">
-              <div class="item">
-                <img class="rounded" src="./assets/img/portfolio/portfolio-4.jpg" />
-              </div>
-              <div class="item">
-                <img class="rounded" src="./assets/img/portfolio/portfolio-5.jpg" />
-              </div>
-              <div class="item">
-                <img class="rounded" src="./assets/img/portfolio/portfolio-6.jpg" />
-              </div>
-              <div class="item">
-                <img class="rounded" src="./assets/img/portfolio/portfolio-7.jpg" />
-              </div>
-              <div class="item">
-                <img class="rounded" src="./assets/img/portfolio/portfolio-8.jpg" />
-              </div>
-              <div class="item">
-                <img class="rounded" src="./assets/img/portfolio/portfolio-9.jpg" />
-              </div>
+  <section>
+    <div class="cta-strip">
+      <div>
+        <strong style="font-size: 18px">Tertarik bekerja sama dengan Kami?</strong>
+        <div style="opacity: 0.9">
+          Kami selalu siap bekerja sama dengan Anda.
+        </div>
+      </div>
+      <div style="display: flex; gap: 10px">
+        <button class="btn btn-blue-primary">Hubungi Kami</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Activity -->
+  <section class="py-5">
+    <div class="container" data-aos="fade-up">
+      <div class="row">
+        <div class="col-md-4 col-12">
+          <h2 class="fw-bold text-center text-color-primary">
+            Aktivitas Kami
+          </h2>
+          <p class="lead">Dalam menjalankan pekerjaan, Kami selalu mengedepankan harmonisasi dan sinergi untuk
+            menghasilkan pekerjaan yang memuaskan bagi setiap pelanggan Kami.</p>
+        </div>
+        <div class="col-md-8 col-12">
+          <div class="owl-carousel owl-theme owl-carousel-activity mt-4">
+            <div class="item">
+              <img class="rounded" src="./assets/img/portfolio/portfolio-4.jpg" />
+            </div>
+            <div class="item">
+              <img class="rounded" src="./assets/img/portfolio/portfolio-5.jpg" />
+            </div>
+            <div class="item">
+              <img class="rounded" src="./assets/img/portfolio/portfolio-6.jpg" />
+            </div>
+            <div class="item">
+              <img class="rounded" src="./assets/img/portfolio/portfolio-7.jpg" />
+            </div>
+            <div class="item">
+              <img class="rounded" src="./assets/img/portfolio/portfolio-8.jpg" />
+            </div>
+            <div class="item">
+              <img class="rounded" src="./assets/img/portfolio/portfolio-9.jpg" />
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- PARTNERS -->
-    <section class="py-5">
-      <div class="container" data-aos="fade-up">
-        <h2 class="display-2 fw-bold text-color-primary text-center">
-          Our Partners
-        </h2>
-        <div class="owl-carousel owl-theme owl-carousel-partners mt-4">
-          <div class="item">
-            <img class="client-logo" src="./assets/img/clients/adsa.png" />
-          </div>
-          <div class="item">
-            <img class="client-logo" src="./assets/img/clients/client-1.png" />
-          </div>
-          <div class="item">
-            <img class="client-logo" src="./assets/img/clients/client-2.png" />
-          </div>
-          <div class="item">
-            <img class="client-logo" src="./assets/img/clients/dfsd.png" />
-          </div>
-          <div class="item">
-            <img class="client-logo" src="./assets/img/clients/dsfsd (2).png" />
-          </div>
-          <div class="item">
-            <img class="client-logo" src="./assets/img/clients/dsfsd.png" />
-          </div>
-          <div class="item">
-            <img class="client-logo" src="./assets/img/clients/sdfds.png" />
-          </div>
+  <!-- PARTNERS -->
+  <section class="py-5">
+    <div class="container" data-aos="fade-up">
+      <h2 class="display-2 fw-bold text-color-primary text-center">
+        Our Partners
+      </h2>
+      <div class="owl-carousel owl-theme owl-carousel-partners mt-4">
+        <div class="item">
+          <img class="client-logo" src="./assets/img/clients/adsa.png" />
+        </div>
+        <div class="item">
+          <img class="client-logo" src="./assets/img/clients/client-1.png" />
+        </div>
+        <div class="item">
+          <img class="client-logo" src="./assets/img/clients/client-2.png" />
+        </div>
+        <div class="item">
+          <img class="client-logo" src="./assets/img/clients/dfsd.png" />
+        </div>
+        <div class="item">
+          <img class="client-logo" src="./assets/img/clients/dsfsd (2).png" />
+        </div>
+        <div class="item">
+          <img class="client-logo" src="./assets/img/clients/dsfsd.png" />
+        </div>
+        <div class="item">
+          <img class="client-logo" src="./assets/img/clients/sdfds.png" />
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- PORTFOLIO -->
-    <!-- <section class="py-5" id="portfolio">
+  <!-- PORTFOLIO -->
+  <!-- <section class="py-5" id="portfolio">
       <div class="container" data-aos="fade-up">
         <h2 class="section-title text-center">Portfolio</h2>
         <div class="row g-4">
@@ -1022,421 +336,308 @@
       </div>
     </section> -->
 
-    <!-- ======= TEAM ======= -->
-    <section id="team" class="team">
-      <div class="container">
-        <div class="section-title text-center text-white" data-aos="fade-up">
-          <h2 class="display-2 fw-bold">Tim Kami</h2>
-          <p class="lead">Kami selalu siap melayani kebutuhan Anda.</p>
+  <!-- ======= TEAM ======= -->
+  <section id="team" class="team">
+    <div class="container">
+      <div class="section-title text-center text-white" data-aos="fade-up">
+        <h2 class="display-2 fw-bold">Tim Kami</h2>
+        <p class="lead">Kami selalu siap melayani kebutuhan Anda.</p>
+      </div>
+
+      <div class="row">
+        <div class="col-xl-3 col-lg-4 col-6" data-aos="zoom-in" data-aos-delay="100">
+          <div class="member">
+            <img src="./assets/img/team/team-1.jpg" class="img-fluid" alt="" style="border-radius: 10px" />
+            <div class="member-info">
+              <div class="member-info-content">
+                <h4>Hariyanto Hadi Santoso</h4>
+                <span>Komisaris Utama</span>
+              </div>
+              <div class="social">
+                <a href=""><i class="fa fa-info"></i></a>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="row">
-          <div
-            class="col-xl-3 col-lg-4 col-6"
-            data-aos="zoom-in"
-            data-aos-delay="100"
-          >
-            <div class="member">
-              <img
-                src="./assets/img/team/team-1.jpg"
-                class="img-fluid"
-                alt=""
-                style="border-radius: 10px"
-              />
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4>Hariyanto Hadi Santoso</h4>
-                  <span>Komisaris Utama</span>
-                </div>
-                <div class="social">
-                  <a href=""><i class="fa fa-info"></i></a>
-                </div>
+        <div class="col-xl-3 col-lg-4 col-6" data-aos="zoom-in" data-aos-delay="200">
+          <div class="member">
+            <img src="./assets/img/team/team-2.jpg" class="img-fluid" alt="" style="border-radius: 10px" />
+            <div class="member-info">
+              <div class="member-info-content">
+                <h4>Erry Mochamad Zakaria</h4>
+                <span>Direktur Utama</span>
+              </div>
+              <div class="social">
+                <a href=""><i class="fa fa-info"></i></a>
               </div>
             </div>
           </div>
+        </div>
 
-          <div
-            class="col-xl-3 col-lg-4 col-6"
-            data-aos="zoom-in"
-            data-aos-delay="200"
-          >
-            <div class="member">
-              <img
-                src="./assets/img/team/team-2.jpg"
-                class="img-fluid"
-                alt=""
-                style="border-radius: 10px"
-              />
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4>Erry Mochamad Zakaria</h4>
-                  <span>Direktur Utama</span>
-                </div>
-                <div class="social">
-                  <a href=""><i class="fa fa-info"></i></a>
-                </div>
+        <div class="col-xl-3 col-lg-4 col-6" data-aos="zoom-in" data-aos-delay="300">
+          <div class="member">
+            <img src="./assets/img/team/team-3.jpg" class="img-fluid" alt="" style="border-radius: 10px" />
+            <div class="member-info">
+              <div class="member-info-content">
+                <h4>Refialdi Iqbal Maulana</h4>
+                <span>Direktur</span>
+              </div>
+              <div class="social">
+                <a href=""><i class="fa fa-info"></i></a>
               </div>
             </div>
           </div>
+        </div>
 
-          <div
-            class="col-xl-3 col-lg-4 col-6"
-            data-aos="zoom-in"
-            data-aos-delay="300"
-          >
-            <div class="member">
-              <img
-                src="./assets/img/team/team-3.jpg"
-                class="img-fluid"
-                alt=""
-                style="border-radius: 10px"
-              />
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4>Refialdi Iqbal Maulana</h4>
-                  <span>Direktur</span>
-                </div>
-                <div class="social">
-                  <a href=""><i class="fa fa-info"></i></a>
-                </div>
+        <div class="col-xl-3 col-lg-4 col-6" data-aos="zoom-in" data-aos-delay="400">
+          <div class="member">
+            <img src="./assets/img/team/team-4.jpg" class="img-fluid" alt="" style="border-radius: 10px" />
+            <div class="member-info">
+              <div class="member-info-content">
+                <h4>Muhammad Yogi Muslim</h4>
+                <span>Komisaris</span>
+              </div>
+              <div class="social">
+                <a href=""><i class="fa fa-info"></i></a>
               </div>
             </div>
           </div>
-
-          <div
-            class="col-xl-3 col-lg-4 col-6"
-            data-aos="zoom-in"
-            data-aos-delay="400"
-          >
-            <div class="member">
-              <img
-                src="./assets/img/team/team-4.jpg"
-                class="img-fluid"
-                alt=""
-                style="border-radius: 10px"
-              />
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4>Muhammad Yogi Muslim</h4>
-                  <span>Komisaris</span>
-                </div>
-                <div class="social">
-                  <a href=""><i class="fa fa-info"></i></a>
-                </div>
+        </div>
+        <div class="col-12 pb-md-4" data-aos="zoom-in" data-aos-delay="400">
+          <div class="member">
+            <img src="./assets/img/team/team.jpg" class="img-fluid" alt="" style="border-radius: 10px" />
+            <div class="member-info">
+              <div class="member-info-content">
+                <h4>Our Excellence Team</h4>
+                <span>Terdiri dari 50+ karyawan yang siap membantu</span>
               </div>
-            </div>
-          </div>
-          <div class="col-12" data-aos="zoom-in" data-aos-delay="400">
-            <div class="member">
-              <img
-                src="./assets/img/team/team.jpg"
-                class="img-fluid"
-                alt=""
-                style="border-radius: 10px"
-              />
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4>Our Excellence Team</h4>
-                  <span>Terdiri dari 50+ karyawan yang siap membantu</span>
-                </div>
-                <div class="social">
-                  <a href=""><i class="fa fa-info"></i></a>
-                </div>
+              <div class="social">
+                <a href=""><i class="fa fa-info"></i></a>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ======= Contact Us Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container py-5" data-aos="fade-up">
-        <div class="section-title text-center">
-          <h2 class="display-2 fw-bold">
-            <span class="text-color-primary">Kontak </span>
-            <span class="text-color-secondary">Kami</span>
-          </h2>
-          <p>Mari bekerja sama dengan Naratas</p>
-        </div>
-
-        <div class="row">
-          <div
-            class="col-lg-5 d-flex align-items-stretch"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div class="info">
-              <div class="address">
-                <i class="fa fa-map-location"></i>
-                <h4>Alamat:</h4>
-                <p>Jl. Pinus Raya No. 29 Bumi Panyawangan</p>
-              </div>
-
-              <div class="email">
-                <i class="fa fa-envelope"></i>
-                <h4>Email:</h4>
-                <p>info@naratas.co.id</p>
-              </div>
-
-              <div class="phone">
-                <i class="fa fa-phone"></i>
-                <h4>Phone:</h4>
-                <p>022 87881401</p>
-              </div>
-
-              <div class="mapouter">
-                <div class="gmap_canvas">
-                  <iframe
-                    width="320"
-                    height="320"
-                    id="gmap_canvas"
-                    src="https://maps.google.com/maps?q=jalan pinus raya no 29 bumi panyawangan&t=&z=16&ie=UTF8&iwloc=&output=embed"
-                    frameborder="0"
-                    scrolling="no"
-                    marginheight="0"
-                    marginwidth="0"
-                  ></iframe
-                  ><a href="https://2yu.co">2yu</a><br />
-                  <style>
-                    .mapouter {
-                      position: relative;
-                      text-align: right;
-                      height: 320px;
-                      width: 320px;
-                    }</style
-                  ><a href="https://embedgooglemap.2yu.co"
-                    >html embed google map</a
-                  >
-                  <style>
-                    .gmap_canvas {
-                      overflow: hidden;
-                      background: none !important;
-                      height: 320px;
-                      width: 320px;
-                    }
-                  </style>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <form
-              action="forms/contact.php"
-              method="post"
-              role="form"
-              class="php-email-form"
-            >
-              <div class="row">
-                <div class="form-group col-md-6">
-                  <label for="name">Nama Anda</label>
-                  <input
-                    type="text"
-                    name="name"
-                    class="form-control"
-                    id="name"
-                    placeholder="Nama Lengkap"
-                    required
-                  />
-                </div>
-                <div class="form-group col-md-6 mt-3 mt-md-0">
-                  <label for="name">Alamat Email</label>
-                  <input
-                    type="email"
-                    class="form-control"
-                    name="email"
-                    id="email"
-                    placeholder="Alamat Email"
-                    required
-                  />
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <label for="name">Subjek</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  name="subject"
-                  id="subject"
-                  placeholder="Subjek"
-                  required
-                />
-              </div>
-              <div class="form-group mt-3">
-                <label for="name">Pesan</label>
-                <textarea
-                  class="form-control"
-                  name="message"
-                  rows="10"
-                  required
-                ></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">
-                  Pesan telah terkirim. Terima kasih!
-                </div>
-              </div>
-              <div class="text-center">
-                <button type="submit">Kirim Pesan</button>
-              </div>
-            </form>
-          </div>
-        </div>
+  <!-- ======= Contact Us Section ======= -->
+  <section id="contact" class="contact">
+    <div class="container py-5" data-aos="fade-up">
+      <div class="section-title text-center">
+        <h2 class="display-2 fw-bold">
+          <span class="text-color-primary">Kontak </span>
+          <span class="text-color-secondary">Kami</span>
+        </h2>
+        <p>Mari bekerja sama dengan Naratas</p>
       </div>
-    </section>
-    <!-- End Contact Us Section -->
 
-    <!-- FOOTER -->
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 mb-4">
-            <div
-              style="width: fit-content"
-              class="d-flex flex-column align-items-center"
-            >
-              <img
-                src="./assets/img/logo_alter.png"
-                class="text-center"
-                style="width: 125px; height: 125px"
-              />
-              <h5 class="fw-bold">PT Naratas Sinergi Solusindo</h5>
-              <p>Melangkah Maju Besatu Dalam Harmoni.</p>
+      <div class="row">
+        <div class="col-lg-5 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+          <div class="info">
+            <div class="address">
+              <i class="fa fa-map-location"></i>
+              <h4>Alamat:</h4>
+              <p>Jl. Pinus Raya No. 29 Bumi Panyawangan</p>
             </div>
-          </div>
-          <div class="col-md-4 mb-4">
-            <h6 class="fw-bold">Layanan</h6>
-            <div
-              style="width: 50px; height: 2px"
-              class="bg-white mt-2 mb-3"
-            ></div>
-            <ul class="list-unstyled">
-              <li>Networking</li>
-              <li>IT Solution</li>
-              <li>Procurement of Goods</li>
-              <li>Tax Consulting</li>
-            </ul>
-          </div>
-          <div class="col-md-4 mb-4" id="contact">
-            <h6 class="fw-bold">Hubungi Kami</h6>
-            <div
-              style="width: 50px; height: 2px"
-              class="bg-white mt-2 mb-3"
-            ></div>
-            <div class="d-flex flex-row">
-              <span class="fa fa-map-location pe-2"></span>
-              <p>Jl. Pinus Raya No. 29 Bumi Panyawangan.</p>
-            </div>
-            <div class="d-flex flex-row">
-              <span class="fa fa-envelope pe-2"></span>
+
+            <div class="email">
+              <i class="fa fa-envelope"></i>
+              <h4>Email:</h4>
               <p>info@naratas.co.id</p>
             </div>
-            <div class="d-flex flex-row">
-              <span class="fa fa-phone pe-2"></span>
+
+            <div class="phone">
+              <i class="fa fa-phone"></i>
+              <h4>Phone:</h4>
               <p>022 87881401</p>
+            </div>
+
+            <div class="mapouter">
+              <div class="gmap_canvas">
+                <iframe width="320" height="320" id="gmap_canvas"
+                  src="https://maps.google.com/maps?q=jalan pinus raya no 29 bumi panyawangan&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                  frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+                  href="https://2yu.co">2yu</a><br />
+                <style>
+                  .mapouter {
+                    position: relative;
+                    text-align: right;
+                    height: 320px;
+                    width: 320px;
+                  }
+                </style><a href="https://embedgooglemap.2yu.co">html embed google map</a>
+                <style>
+                  .gmap_canvas {
+                    overflow: hidden;
+                    background: none !important;
+                    height: 320px;
+                    width: 320px;
+                  }
+                </style>
+              </div>
             </div>
           </div>
         </div>
-        <hr />
-        <div class="text-center mt-4">
-          © 2025 PT Naratas Sinergi Solusindo — All Rights Reserved
+
+        <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <div class="row">
+              <div class="form-group col-md-6">
+                <label for="name">Nama Anda</label>
+                <input type="text" name="name" class="form-control" id="name" placeholder="Nama Lengkap" required />
+              </div>
+              <div class="form-group col-md-6 mt-3 mt-md-0">
+                <label for="name">Alamat Email</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Alamat Email" required />
+              </div>
+            </div>
+            <div class="form-group mt-3">
+              <label for="name">Subjek</label>
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subjek" required />
+            </div>
+            <div class="form-group mt-3">
+              <label for="name">Pesan</label>
+              <textarea class="form-control" name="message" rows="10" required></textarea>
+            </div>
+            <div class="my-3">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">
+                Pesan telah terkirim. Terima kasih!
+              </div>
+            </div>
+            <div class="text-center">
+              <button type="submit">Kirim Pesan</button>
+            </div>
+          </form>
         </div>
       </div>
-    </footer>
+    </div>
+  </section>
 
-    <!-- WHATSAPP FLOATING BUTTON -->
-    <a
-      class="whatsapp-float"
-      href="https://wa.me/6281234567890"
-      target="_blank"
-    >
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path
-          fill="#fff"
-          d="M3.516 3.516c4.686-4.686 12.284-4.686 16.97 0 4.686 4.686 4.686 12.283 0 16.97a12.004 12.004 0 0 1-13.754 2.299l-5.814.735a.392.392 0 0 1-.438-.44l.748-5.788A12.002 12.002 0 0 1 3.517 3.517zm3.61 17.043.3.158a9.846 9.846 0 0 0 11.534-1.758c3.843-3.843 3.843-10.074 0-13.918-3.843-3.843-10.075-3.843-13.918 0a9.846 9.846 0 0 0-1.747 11.554l.16.303-.51 3.942a.196.196 0 0 0 .219.22l3.961-.501zm6.534-7.003-.933 1.164a9.843 9.843 0 0 1-3.497-3.495l1.166-.933a.792.792 0 0 0 .23-.94L9.561 6.96a.793.793 0 0 0-.924-.445 1291.6 1291.6 0 0 0-2.023.524.797.797 0 0 0-.588.88 11.754 11.754 0 0 0 10.005 10.005.797.797 0 0 0 .88-.587l.525-2.023a.793.793 0 0 0-.445-.923L14.6 13.327a.792.792 0 0 0-.94.23z"
-        />
-      </svg>
-    </a>
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4 px-5">
+          <div style="width: fit-content" class="d-flex flex-column align-items-center">
+            <img src="./assets/img/logo_alter.png" class="text-center" style="width: 125px; height: 125px" />
+            <h5 class="fw-bold">PT Naratas Sinergi Solusindo</h5>
+            <p>Melangkah Maju Besatu Dalam Harmoni.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4 px-5">
+          <h6 class="fw-bold">Layanan</h6>
+          <div style="width: 50px; height: 2px" class="bg-white mt-2 mb-3"></div>
+          <ul class="list-unstyled">
+            <li><a href="" class="text-white text-decoration-none">Networking</a></li>
+            <li><a href="" class="text-white text-decoration-none">IT Solution</a></li>
+            <li><a href="" class="text-white text-decoration-none">Procurement of Goods</a></li>
+            <li><a href="" class="text-white text-decoration-none">Tax Consulting</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-4 px-5" id="contact">
+          <h6 class="fw-bold">Hubungi Kami</h6>
+          <div style="width: 50px; height: 2px" class="bg-white mt-2 mb-3"></div>
+          <div class="d-flex flex-row mb-3">
+            <span class="fa fa-map-location pe-2 align-content-center"></span>
+            <p class="mb-0">Jl. Pinus Raya No. 29 Bumi Panyawangan.</p>
+          </div>
+          <div class="d-flex flex-row mb-3">
+            <span class="fa fa-envelope pe-2 align-content-center"></span>
+            <p class="mb-0">info@naratas.co.id</p>
+          </div>
+          <div class="d-flex flex-row mb-3">
+            <span class="fa fa-phone pe-2 align-content-center"></span>
+            <p class="mb-0">022 87881401</p>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="text-center mt-4">
+        © 2025 PT Naratas Sinergi Solusindo — All Rights Reserved
+      </div>
+    </div>
+  </footer>
 
-    <!-- AOS & Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script>
-      AOS.init({ duration: 1200 });
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- WHATSAPP FLOATING BUTTON -->
+  <a class="whatsapp-float" href="https://wa.me/6281234567890" target="_blank">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path fill="#fff"
+        d="M3.516 3.516c4.686-4.686 12.284-4.686 16.97 0 4.686 4.686 4.686 12.283 0 16.97a12.004 12.004 0 0 1-13.754 2.299l-5.814.735a.392.392 0 0 1-.438-.44l.748-5.788A12.002 12.002 0 0 1 3.517 3.517zm3.61 17.043.3.158a9.846 9.846 0 0 0 11.534-1.758c3.843-3.843 3.843-10.074 0-13.918-3.843-3.843-10.075-3.843-13.918 0a9.846 9.846 0 0 0-1.747 11.554l.16.303-.51 3.942a.196.196 0 0 0 .219.22l3.961-.501zm6.534-7.003-.933 1.164a9.843 9.843 0 0 1-3.497-3.495l1.166-.933a.792.792 0 0 0 .23-.94L9.561 6.96a.793.793 0 0 0-.924-.445 1291.6 1291.6 0 0 0-2.023.524.797.797 0 0 0-.588.88 11.754 11.754 0 0 0 10.005 10.005.797.797 0 0 0 .88-.587l.525-2.023a.793.793 0 0 0-.445-.923L14.6 13.327a.792.792 0 0 0-.94.23z" />
+    </svg>
+  </a>
 
-    <!-- OWL Carousel CSS & JS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script>
-      $(".owl-carousel-partners").owlCarousel({
-        loop: true,
-        margin: 40,
-        autoWidth: true,
-        autoplay: true,
-        autoplayTimeout: 5000,
-        autoplayHoverPause: true,
-        responsive: {
-          0: { items: 2 },
-          576: { items: 3 },
-          768: { items: 4 },
-          992: { items: 5 },
+  <!-- AOS & Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1200 });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- OWL Carousel CSS & JS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script>
+    $(".owl-carousel-partners").owlCarousel({
+      loop: true,
+      margin: 40,
+      autoWidth: true,
+      autoplay: true,
+      autoplayTimeout: 5000,
+      autoplayHoverPause: true,
+      responsive: {
+        0: { items: 2 },
+        576: { items: 3 },
+        768: { items: 4 },
+        992: { items: 5 },
+      },
+    });
+    $(".owl-carousel-activity").owlCarousel({
+      items: 1,
+      center: true,
+      loop: true,
+      // margin: 10,
+      autoplay: true,
+      autoplayTimeout: 5000,
+      stagePadding: 60,
+      responsive: {
+        200: {
+          stagePadding: 60,
         },
-      });
-      $(".owl-carousel-activity").owlCarousel({
-        items: 1,
-        center: true,
-        loop: true,
-        // margin: 10,
-        autoplay: true,
-        autoplayTimeout: 5000,
-        stagePadding: 60,
-        responsive: {
-          200: {
-            stagePadding: 60,
-          },
-          400: {
-            stagePadding: 80,
-          },
-          600: {
-            stagePadding: 100,
-          },
-          800: {
-            stagePadding: 160,
-          },
-          100: {
-            stagePadding: 200,
-          },
+        400: {
+          stagePadding: 80,
         },
-      });
-    </script>
-    <script>
-      // Transparent header on scroll
-      window.addEventListener("scroll", function () {
-        const header = document.querySelector("header");
-        if (window.scrollY > 80) {
-          header.classList.add("solid-header");
-          header.classList.remove("transparent-header");
-        } else {
-          header.classList.add("transparent-header");
-          header.classList.remove("solid-header");
-        }
-      });
-    </script>
-  </body>
+        600: {
+          stagePadding: 100,
+        },
+        800: {
+          stagePadding: 160,
+        },
+        100: {
+          stagePadding: 200,
+        },
+      },
+    });
+  </script>
+  <script>
+    // Transparent header on scroll
+    window.addEventListener("scroll", function () {
+      const header = document.querySelector("header");
+      if (window.scrollY > 80) {
+        header.classList.add("solid-header");
+        header.classList.remove("transparent-header");
+      } else {
+        header.classList.add("transparent-header");
+        header.classList.remove("solid-header");
+      }
+    });
+  </script>
+</body>
+
 </html>
