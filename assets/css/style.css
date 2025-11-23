@@ -105,7 +105,7 @@ header {
 }
 
 .btn-orange:hover {
-  background: #ef8201;
+  background: var(--orange);
   color: #fff;
 }
 
@@ -130,27 +130,27 @@ header {
 }
 
 .text-color-primary {
-  color: #ef8201;
+  color: var(--orange);
 }
 
 .text-color-secondary {
-  color: #0e94d3;
+  color: var(--blue);
 }
 
 .text-color-tertiary {
-  color: #898989;
+  color: var(--grey);
 }
 
 .bg-color-primary {
-  background-color: #ef8201;
+  background-color: var(--orange);
 }
 
 .bg-color-secondary {
-  background-color: #0e94d3;
+  background-color: var(--blue);
 }
 
 .bg-color-tertiary {
-  background-color: #898989;
+  background-color: var(--grey);
 }
 
 .banner-section {
@@ -438,7 +438,7 @@ footer {
 }
 
 .contact .info .address i {
-  color: #0e94d3;
+  color: var(--blue);
 }
 
 .contact .info .email i {
@@ -446,7 +446,7 @@ footer {
 }
 
 .contact .info .phone i {
-  color: #898989;
+  color: var(--grey);
 }
 
 .contact .info h4 {
@@ -498,12 +498,12 @@ footer {
 }
 
 .contact .info .address:hover i {
-  background: #0e94d3;
+  background: var(--blue);
   color: #fff;
 }
 
 .contact .info .phone:hover i {
-  background: #898989;
+  background: var(--grey);
   color: #fff;
 }
 
