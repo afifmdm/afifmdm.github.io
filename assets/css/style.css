@@ -167,7 +167,7 @@ header {
 
 .banner-section {
   background: linear-gradient(rgba(14, 148, 211, 0.8), rgba(14, 148, 211, 0.8)),
-    url("../img/team/team.jpg");
+    url("../img/team/team.webp");
   background-size: cover;
   background-position: center;
   padding: 180px 0;
@@ -183,7 +183,7 @@ header {
 .company-section {
   background: linear-gradient(rgba(137, 137, 137, 0.8),
       rgba(137, 137, 137, 0.8)),
-    url("../img/company.jpg");
+    url("../img/company.webp");
   background-size: cover;
   background-position: center;
   padding: 180px 0;
@@ -424,6 +424,39 @@ footer {
   /* active/hover color */
 }
 
+.owl-carousel-portfolio .owl-nav {
+    position: absolute;
+    left: 10px;
+    /* top: 50%; */
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: row;
+    /* gap: 10px; */
+}
+
+.owl-carousel-portfolio .nav-btn {
+    width: 42px;
+    height: 42px;
+    background: white !important;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.owl-carousel-portfolio .nav-btn:hover {
+    background: #007bff !important;
+    color: #fff;
+}
+
+.owl-prev:hover,
+.owl-next:hover {
+    background: none !important;
+}
 /*--------------------------------------------------------------
 # Contact Us
 --------------------------------------------------------------*/
