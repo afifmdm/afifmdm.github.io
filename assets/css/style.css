@@ -316,8 +316,8 @@ footer {
 
 .team {
   background: linear-gradient(90deg, var(--blue), var(--orange));
-  padding: 60px 0;
-  border-radius: 56px 56px 56px 56px;
+  padding: 50px 0;
+  border-radius: 56px 56px 0px 0px;
 }
 
 .team .member {
