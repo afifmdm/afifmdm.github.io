@@ -18,9 +18,8 @@ $(".owl-carousel-partners").owlCarousel({
   autoplayHoverPause: true,
   responsive: {
     0: { items: 2 },
-    576: { items: 3 },
-    768: { items: 4 },
-    992: { items: 5 },
+    600: { items: 3 },
+    1000: { items: 4 },
   },
 });
 $(".owl-carousel-activity").owlCarousel({

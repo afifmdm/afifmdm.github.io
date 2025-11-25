@@ -40,11 +40,43 @@ header {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-.nav-link{
-  color: var(--blue)
+/* .nav-link {
+  color: var(--blue);
+} */
+
+.nav-link.nav-link-custom {
+  position: relative;
+  display: inline-block;   /* FIX: keeps underline inside the link */
+  font-weight: 400;
+  color: var(--blue);
+  padding-bottom: 6px;     /* give space for border */
+  transition: all 0.25s ease;
 }
 
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+/* Bottom border effect */
+.nav-link.nav-link-custom::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;               /* thickness of underline */
+  background: #007bff;       /* color of underline */
+  transition: width 0.25s ease;
+}
+
+/* Hover effect */
+.nav-link.nav-link-custom:hover {
+  font-weight: 600;          /* bolder text */
+  color: #007bff !important; /* change text color */
+}
+
+.nav-link.nav-link-custom:hover::after {
+  width: 100%;               /* animate underline */
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
   background-color: var(--blue);
 }
 
@@ -62,15 +94,15 @@ header {
   color: #333 !important;
 }
 
-.title-grey{
+.title-grey {
   color: var(--grey) !important;
 }
 
-.title-blue{
+.title-blue {
   color: var(--blue) !important;
 }
 
-.title-orange{
+.title-orange {
   color: var(--orange) !important;
 }
 
@@ -181,8 +213,10 @@ header {
 }
 
 .company-section {
-  background: linear-gradient(rgba(137, 137, 137, 0.8),
-      rgba(137, 137, 137, 0.8)),
+  background: linear-gradient(
+      rgba(137, 137, 137, 0.8),
+      rgba(137, 137, 137, 0.8)
+    ),
     url("../img/company.webp");
   background-size: cover;
   background-position: center;
@@ -310,8 +344,8 @@ footer {
 }
 
 .client-logo {
-  max-height: 50px;
-  max-width: 125px;
+  max-height: 75px;
+  max-width: 150px;
 }
 
 .team {
@@ -389,10 +423,12 @@ footer {
 }
 
 .team .member:hover .member-info {
-  background: linear-gradient(0deg,
-      rgba(78, 64, 57, 0.95) 0%,
-      rgba(78, 64, 57, 0.95) 15%,
-      rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(78, 64, 57, 0.95) 0%,
+    rgba(78, 64, 57, 0.95) 15%,
+    rgba(255, 255, 255, 0) 100%
+  );
   opacity: 1;
   transition: 0.4s;
 }
@@ -412,7 +448,7 @@ footer {
   /* normal color */
 }
 
-.owl-carousel .owl-stage{
+.owl-carousel .owl-stage {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -425,37 +461,37 @@ footer {
 }
 
 .owl-carousel-portfolio .owl-nav {
-    position: absolute;
-    left: 10px;
-    /* top: 50%; */
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: row;
-    /* gap: 10px; */
+  position: absolute;
+  left: 10px;
+  /* top: 50%; */
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: row;
+  /* gap: 10px; */
 }
 
 .owl-carousel-portfolio .nav-btn {
-    width: 42px;
-    height: 42px;
-    background: white !important;
-    border-radius: 50%;
-    border: 2px solid #ddd;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    cursor: pointer;
-    transition: 0.3s;
+  width: 42px;
+  height: 42px;
+  background: white !important;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .owl-carousel-portfolio .nav-btn:hover {
-    background: #007bff !important;
-    color: #fff;
+  background: #007bff !important;
+  color: #fff;
 }
 
 .owl-prev:hover,
 .owl-next:hover {
-    background: none !important;
+  background: none !important;
 }
 /*--------------------------------------------------------------
 # Contact Us
@@ -574,7 +610,7 @@ footer {
   font-weight: 600;
 }
 
-.contact .php-email-form .error-message br+br {
+.contact .php-email-form .error-message br + br {
   margin-top: 25px;
 }
 
@@ -655,19 +691,27 @@ footer {
   }
 }
 
-.bump-effect{
+.bump-effect {
   display: inline-block;
   animation: bump-effect 2s ease-in-out infinite;
 }
 
 @keyframes bump-effect {
-  0%   { transform: translateY(0); }
-  10%  { transform: translateY(8px); }
-  20%  { transform: translateY(0); }
-  100% { transform: translateY(0); }
+  0% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(8px);
+  }
+  20% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
-#chevron_content_jump{
+#chevron_content_jump {
   display: flex;
   width: 60px;
   height: 60px;
@@ -675,11 +719,14 @@ footer {
 }
 
 @keyframes chevron_content_jump {
-  0%, 14%, 35% {
+  0%,
+  14%,
+  35% {
     transform: scale(1);
   }
-  7%, 21% {
-      transform: scale(1.3);
-      background-color: rgba(23, 130, 252, 0.8);
+  7%,
+  21% {
+    transform: scale(1.3);
+    background-color: rgba(14, 148, 211, 0.8);
   }
 }
