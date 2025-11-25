@@ -122,16 +122,16 @@ header {
 }
 
 /* Navbar toggler color switch */
-.transparent-header .navbar-toggler {
-  border-color: #fff !important;
+.transparent-header .toggler-icon {
+  background-color: #ffffff !important;
 }
 
 .transparent-header .navbar-toggler-icon {
   filter: invert(1) brightness(2);
 }
 
-.solid-header .navbar-toggler {
-  border-color: #333 !important;
+.solid-header .toggler-icon {
+  background-color: var(--blue) !important;
 }
 
 .solid-header .navbar-toggler-icon {
@@ -141,6 +141,39 @@ header {
 .navbar-brand span {
   color: var(--blue);
   font-weight: 600;
+}
+/* base style */
+.navbar-toggler {
+  border: none;
+  padding: 0.25rem 0.5rem;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.toggler-icon {
+  width: 25px;
+  height: 3px;
+  background-color: #ffffff;
+  display: block;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+  margin: 5px 0;
+}
+
+/* when expanded */
+.navbar-toggler[aria-expanded="true"] .top-bar {
+  transform: rotate(45deg);
+  transform-origin: 10% 10%;
+}
+
+.navbar-toggler[aria-expanded="true"] .middle-bar {
+  opacity: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] .bottom-bar {
+  transform: rotate(-45deg);
+  transform-origin: 10% 90%;
 }
 
 .btn-orange {
