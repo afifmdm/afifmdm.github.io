@@ -13,31 +13,22 @@ $(".owl-carousel-partners").owlCarousel({
   loop: true,
   margin: 40,
   autoWidth: true,
+  nav: false,
+  center: true,
   autoplay: true,
-  autoplayTimeout: 5000,
+  autoplayTimeout: 4000,
   autoplayHoverPause: true,
   responsive: {
-    200: {
-      items: 2,
-    },
-    400: {
+    0: {
       items: 3,
     },
     600: {
-      items: 4,
-    },
-    800: {
       items: 5,
     },
-    100: {
-      items: 6,
+    1000: {
+      items: 8,
     },
   },
-  // responsive: {
-  //   0: { items: 2 },
-  //   600: { items: 3 },
-  //   1000: { items: 4 },
-  // },
 });
 $(".owl-carousel-activity").owlCarousel({
   items: 1,
