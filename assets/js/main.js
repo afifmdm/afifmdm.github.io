@@ -11,7 +11,7 @@ window.addEventListener("scroll", function () {
 });
 $(".owl-carousel-partners").owlCarousel({
   loop: true,
-  margin: 25,
+  margin: 40,
   autoWidth: true,
   autoplay: true,
   autoplayTimeout: 5000,
