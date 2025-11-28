@@ -44,35 +44,45 @@ header {
   color: var(--blue);
 } */
 
+/* Remove Bootstrap caret */
+.no-caret.dropdown-toggle::after {
+  display: none !important;
+}
+
+.no-caret.dropdown-toggle {
+  padding-right: 0 !important;
+}
+
+/* Base link style */
 .nav-link.nav-link-custom {
   position: relative;
-  display: inline-block;   /* FIX: keeps underline inside the link */
+  display: inline-block;
   font-weight: 400;
   color: var(--blue);
-  padding-bottom: 6px;     /* give space for border */
+  padding-bottom: 6px;
   transition: all 0.25s ease;
 }
 
-/* Bottom border effect */
-.nav-link.nav-link-custom::after {
+.nav-link.nav-link-custom::before {
   content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 0%;
-  height: 2px;               /* thickness of underline */
-  background: #007bff;       /* color of underline */
+  height: 2px;
+  background: #007bff;
   transition: width 0.25s ease;
 }
 
 /* Hover effect */
 .nav-link.nav-link-custom:hover {
-  font-weight: 600;          /* bolder text */
-  color: #007bff !important; /* change text color */
+  font-weight: 600;
+  color: #007bff !important;
 }
 
-.nav-link.nav-link-custom:hover::after {
-  width: 100%;               /* animate underline */
+/* Animate underline */
+.nav-link.nav-link-custom:hover::before {
+  width: 100%;
 }
 
 .nav-pills .nav-link.active,
@@ -258,7 +268,7 @@ header {
   color: #fff;
 }
 
-.banner-karir{
+.banner-karir {
   background: linear-gradient(rgba(14, 148, 211, 0.8), rgba(14, 148, 211, 0.8)),
     url("../img/team/team.webp");
   background-size: cover;
