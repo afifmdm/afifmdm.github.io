@@ -397,7 +397,7 @@ footer {
 }
 
 .client-logo {
-  height: 70px;
+  max-height: 70px;
   /* max-width: 280px;
   width: auto; */
 }
