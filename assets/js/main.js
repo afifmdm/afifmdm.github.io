@@ -1,6 +1,6 @@
 // Transparent header on scroll
 window.addEventListener("scroll", function () {
-  const header = document.querySelector("header");
+  const header = document.querySelector(".header-home");
   if (window.scrollY > 80) {
     header.classList.add("solid-header");
     header.classList.remove("transparent-header");
