@@ -12,7 +12,7 @@ window.addEventListener("scroll", function () {
 $(".owl-carousel-partners").owlCarousel({
   loop: true,
   margin: 40,
-  autoWidth: true,
+  // autoWidth: true,
   nav: false,
   center: true,
   autoplay: true,
