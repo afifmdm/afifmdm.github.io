@@ -1,12 +1,14 @@
 // Transparent header on scroll
 window.addEventListener("scroll", function () {
   const header = document.querySelector(".header-home");
-  if (window.scrollY > 80) {
-    header.classList.add("solid-header");
-    header.classList.remove("transparent-header");
-  } else {
-    header.classList.add("transparent-header");
-    header.classList.remove("solid-header");
+  if (header){
+    if (window.scrollY > 80) {
+      header.classList.add("solid-header");
+      header.classList.remove("transparent-header");
+    } else {
+      header.classList.add("transparent-header");
+      header.classList.remove("solid-header");
+    }
   }
 });
 $(".owl-carousel-partners").owlCarousel({
