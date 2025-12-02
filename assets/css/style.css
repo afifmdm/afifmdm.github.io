@@ -519,7 +519,7 @@ footer {
   /* active/hover color */
 }
 
-.owl-carousel-portfolio .owl-nav {
+.owl-carousel-portofolio .owl-nav {
   position: absolute;
   left: 10px;
   /* top: 50%; */
@@ -529,7 +529,7 @@ footer {
   /* gap: 10px; */
 }
 
-.owl-carousel-portfolio .nav-btn {
+.owl-carousel-portofolio .nav-btn {
   width: 42px;
   height: 42px;
   background: white !important;
@@ -543,7 +543,7 @@ footer {
   transition: 0.3s;
 }
 
-.owl-carousel-portfolio .nav-btn:hover {
+.owl-carousel-portofolio .nav-btn:hover {
   background: #007bff !important;
   color: #fff;
 }

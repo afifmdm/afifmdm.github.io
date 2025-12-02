@@ -56,7 +56,7 @@ $(".owl-carousel-activity").owlCarousel({
     },
   },
 });
-$(".owl-carousel-portfolio").owlCarousel({
+$(".owl-carousel-portofolio").owlCarousel({
   loop: true,
   margin: 10,
   nav: true,
