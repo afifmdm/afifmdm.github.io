@@ -90,6 +90,11 @@ header {
   background-color: var(--blue);
 }
 
+.navbar-collapse.collapse.show{
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+}
+
 .transparent-header .navbar-brand span,
 .transparent-header .nav-link {
   color: #fff !important;
