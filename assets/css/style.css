@@ -306,7 +306,7 @@ header {
   background-size: cover;
   background-position: center;
   /* padding: 140px 0; */
-  height: 175px;
+  height: auto;
   color: #fff;
 }
 
@@ -316,7 +316,7 @@ header {
   background-size: cover;
   background-position: center;
   /* padding: 140px 0; */
-  height: 175px;
+  height: auto;
   color: #fff;
 }
 
@@ -326,7 +326,7 @@ header {
   background-size: cover;
   background-position: center;
   /* padding: 140px 0; */
-  height: 175px;
+  height: auto;
   color: #fff;
 }
 
@@ -336,7 +336,7 @@ header {
   background-size: cover;
   background-position: center;
   /* padding: 140px 0; */
-  height: 175px;
+  height: auto;
   color: #fff;
 }
 
