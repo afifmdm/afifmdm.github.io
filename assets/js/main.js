@@ -79,3 +79,15 @@ $(".owl-carousel-portofolio").owlCarousel({
     },
   },
 });
+
+$(document).ready(function () {
+    $("body").addClass("preloader-site");
+});
+
+// Hide preloader only when ALL assets are loaded
+$(window).on("load", function () {
+    setTimeout(function() {
+        $(".preloader-wrapper").fadeOut(600);
+        $("body").removeClass("preloader-site");
+    }, 2000); // keep visible at least 2 seconds 
+});

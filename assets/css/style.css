@@ -789,3 +789,41 @@ footer {
     background-color: rgba(14, 148, 211, 0.8);
   }
 }
+
+
+/* PRELOADER */
+body.preloader-site {
+  overflow: hidden;
+}
+
+.preloader-wrapper {
+  height: 100%;
+  width: 100%;
+  background: var(--blue);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999999;
+}
+
+.preloader-wrapper .preloader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes rotateOnly {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Rotating logo */
+.preloader-wrapper .preloader img {
+  animation: rotateOnly 2s linear infinite;
+}
