@@ -368,8 +368,8 @@ footer {
 
 .whatsapp-float {
   position: fixed;
-  bottom: 15px;
-  right: 15px;
+  bottom: 30px;
+  left: 30px;
   background: #25d366;
   color: #fff;
   width: 55px;
@@ -826,4 +826,55 @@ body.preloader-site {
 /* Rotating logo */
 .preloader-wrapper .preloader img {
   animation: rotateOnly 2s linear infinite;
+  max-width: 250px;
 }
+
+/* =============== SCROLL ON TOP ================ */
+#scrollTopBtn {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background: conic-gradient(
+        var(--blue) 0deg,
+        var(--blue) var(--progress),
+        #ddd var(--progress),
+        #ddd 360deg
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: opacity 0.3s, transform 0.3s;
+    z-index: 9999;
+}
+
+#scrollTopBtn::before {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+#scrollTopBtn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#scrollTopBtn i {
+    position: relative;
+    z-index: 2;
+    font-size: 18px;
+    color: var(--blue);
+}
+/* =============== END OF SCROLL ON TOP ================ */

@@ -81,7 +81,30 @@ $(".owl-carousel-portofolio").owlCarousel({
 });
 
 $(document).ready(function () {
-    $("body").addClass("preloader-site");
+  $("body").addClass("preloader-site");
+  const btn = document.getElementById("scrollTopBtn");
+
+  window.addEventListener("scroll", () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = scrollTop / docHeight;
+
+      // convert progress to degrees
+      btn.style.setProperty("--progress", `${progress * 360}deg`);
+
+      if (scrollTop > 200) {
+          btn.classList.add("show");
+      } else {
+          btn.classList.remove("show");
+      }
+  });
+
+  btn.addEventListener("click", () => {
+      window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+      });
+  });
 });
 
 // Hide preloader only when ALL assets are loaded
