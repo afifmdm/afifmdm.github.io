@@ -379,11 +379,11 @@ footer {
 .whatsapp-float {
   position: fixed;
   bottom: 15px;
-  left: 15px;
+  right: 15px;
   background: #25d366;
   color: #fff;
-  width: 55px;
-  height: 55px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -843,7 +843,7 @@ body.preloader-site {
 #scrollTopBtn {
     position: fixed;
     right: 15px;
-    bottom: 15px;
+    bottom: 75px;
     width: 48px;
     height: 48px;
     border-radius: 50%;
