@@ -81,8 +81,18 @@ header {
 }
 
 /* Animate underline */
-.nav-link.nav-link-custom:hover::before {
-  width: 100%;
+@media screen and (max-width: 992px) {
+  .nav-link.nav-link-custom:hover::before {
+    /* width: 100%; */
+    width: 25px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .nav-link.nav-link-custom:hover::before {
+    /* width: 100%; */
+    margin-left: 10px;
+    width: 25px;
+  }
 }
 
 .nav-pills .nav-link.active,
