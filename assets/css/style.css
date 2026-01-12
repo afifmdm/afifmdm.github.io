@@ -75,7 +75,7 @@ header {
 }
 
 /* Hover effect */
-.nav-link.nav-link-custom:hover, .nav-link.active {
+.nav-link.nav-link-custom:hover, .nav-link.nav-link-custom.active {
   font-weight: 600;
   color: #007bff !important;
 }
