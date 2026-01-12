@@ -116,7 +116,7 @@ header {
 
 /* .solid-header .navbar-brand span, */
 .solid-header .nav-link {
-  color: #333 !important;
+  color: #333;
 }
 
 .title-grey {
