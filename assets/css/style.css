@@ -263,6 +263,12 @@ header {
   background-position: center;
   padding: 180px 0;
   color: #fff;
+  animation: slowZoom 30s ease-in-out;
+}
+
+@keyframes slowZoom {
+  0%   { transform: scale(1); }
+  100% { transform: scale(1.1); }
 }
 
 .section-title {
@@ -277,6 +283,16 @@ header {
       rgba(137, 137, 137, 0.8)
     ),
     url("../img/company.webp");
+  background-size: cover;
+  background-position: center;
+  padding: 180px 0;
+  color: #fff;
+  border-color: transparent;
+}
+
+.layanan-section {
+  background: 
+    url("../img/bg-layanan.webp");
   background-size: cover;
   background-position: center;
   padding: 180px 0;
@@ -810,11 +826,20 @@ body.preloader-site {
 .preloader-wrapper {
   height: 100%;
   width: 100%;
-  background: var(--blue);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 9999999;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.4), rgba(0,0,0,.05)),
+    repeating-linear-gradient(
+      45deg,
+      rgba(0,0,0,.02),
+      rgba(0,0,0,.02) 1px,
+      transparent 1px,
+      transparent 4px
+    ),
+    var(--blue);
 }
 
 .preloader-wrapper .preloader {
@@ -836,7 +861,7 @@ body.preloader-site {
 
 /* Rotating logo */
 .preloader-wrapper .preloader img {
-  animation: rotateOnly 2s linear infinite;
+  animation: rotateOnly 3s linear infinite;
   max-width: 250px;
 }
 
