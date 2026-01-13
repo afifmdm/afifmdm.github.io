@@ -263,12 +263,6 @@ header {
   background-position: center;
   padding: 180px 0;
   color: #fff;
-  animation: slowZoom 30s ease-in-out;
-}
-
-@keyframes slowZoom {
-  0%   { transform: scale(1); }
-  100% { transform: scale(1.1); }
 }
 
 .section-title {
@@ -283,16 +277,6 @@ header {
       rgba(137, 137, 137, 0.8)
     ),
     url("../img/company.webp");
-  background-size: cover;
-  background-position: center;
-  padding: 180px 0;
-  color: #fff;
-  border-color: transparent;
-}
-
-.layanan-section {
-  background: 
-    url("../img/bg-layanan.webp");
   background-size: cover;
   background-position: center;
   padding: 180px 0;
@@ -937,4 +921,29 @@ body.preloader-site {
     /* box-shadow: 0px 0px 32px 10px rgba(19, 74, 110, 0.24); */
     border-radius: 16px;
     padding: 60px 15px 28px 15px;
+}
+
+.box-services.service-networking{
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/layanan-fo-network.webp");
+  background-size: cover;
+  background-position: center;
+  height: auto;
+}
+.box-services.service-it{
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/layanan-it-solution.webp");
+  background-size: cover;
+  background-position: center;
+  height: auto;
+}
+.box-services.service-pog{
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/layanan-pog.webp");
+  background-size: cover;
+  background-position: center;
+  height: auto;
+}
+.box-services.service-tax{
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/layanan-tax-consulting.webp");
+  background-size: cover;
+  background-position: center;
+  height: auto;
 }
