@@ -91,41 +91,121 @@
   </nav>
 
   <!-- SERVICES -->
-  <section class="py-5 bg-light" id="services">
-    <div class="container" data-aos="fade-up">
-      <h2 class="text-color-tertiary section-title text-center display-2">Layanan</h2>
-      <div class="row">
-        <div class="col-md-6 mb-4" data-aos="zoom-in">
-          <div class="service-box h-100 text-center">
-            <h5 class="fw-bold">Networking</h5>
-            <p>Build & Maitenance Fiber Optic Network. Network Design and Implementation.</p>
-            <p class="fw-bold text-color-primary">Pelajari Selengkapnya <span class="fa fa-arrow-right"></span></p>
+  <section id="services" data-aos="fade-up">
+    <h2 class="section-title text-center display-2 text-color-primary mb-0">Layanan <span class="text-color-tertiary">Naratas</span></h2>
+    <i class="fa-2xl fa-solid fa-ellipsis-h text-color-primary w-100 text-center mb-4"></i>
+    <div class="row m-0">
+      <div class="col-md-3 col-6 p-0" data-bs-toggle="modal" data-bs-target="#networkModal">
+        <div class="box-services service-networking ratio ratio-1x1">
+          <div class="text-white text-center align-content-center p-2">
+            <i class="fa-2xl fa-solid fa-project-diagram"></i>
+            <div class="fw-bold fs-4 pt-2">
+              Networking
+            </div>
           </div>
         </div>
-        <div class="col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
-          <div class="service-box h-100 text-center">
-            <h5 class="fw-bold">IT Solution</h5>
-            <p>Build & Maitenance Server. Web Development.</p>
-            <p class="fw-bold text-color-primary">Pelajari Selengkapnya <span class="fa fa-arrow-right"></span></p>
+      </div>
+      <div class="col-md-3 col-6 p-0" data-bs-toggle="modal" data-bs-target="#itsolutionModal">
+        <div class="box-services service-it ratio ratio-1x1">
+          <div class="text-white text-center align-content-center p-2">
+            <i class="fa-2xl fa-solid fa-code"></i>
+            <div class="fw-bold fs-4 pt-2">
+              IT Solution
+            </div>
           </div>
         </div>
-        <div class="col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
-          <div class="service-box h-100 text-center">
-            <h5 class="fw-bold">Procurement of Goods</h5>
-            <p>Bill of Quantities. Procurement of items for operational business needs.</p>
-            <p class="fw-bold text-color-primary">Pelajari Selengkapnya <span class="fa fa-arrow-right"></span></p>
+      </div>
+      <div class="col-md-3 col-6 p-0" data-bs-toggle="modal" data-bs-target="#pogModal">
+        <div class="box-services service-pog ratio ratio-1x1">
+          <div class="text-white text-center align-content-center p-2">
+            <i class="fa-2xl fa-solid fa-wrench"></i>
+            <div class="fw-bold fs-4 pt-2">
+              Procurement of Goods
+            </div>
           </div>
         </div>
-        <div class="col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
-          <div class="service-box h-100 text-center">
-            <h5 class="fw-bold">Tax Consulting</h5>
-            <p>Tax Planning & Compliance.</p>
-            <p class="fw-bold text-color-primary">Pelajari Selengkapnya <span class="fa fa-arrow-right"></span></p>
+      </div>
+      <div class="col-md-3 col-6 p-0" data-bs-toggle="modal" data-bs-target="#taxModal">
+        <div class="box-services service-tax ratio ratio-1x1">
+          <div class="text-white text-center align-content-center p-2">
+            <i class="fa-2xl fa-solid fa-balance-scale"></i>
+            <div class="fw-bold fs-4 pt-2">
+              Tax Consulting
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+  <!-- MODAL Layanan -->
+  <div class="modal fade" id="networkModal" tabindex="-1" aria-labelledby="networkModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header justify-content-between">
+          <div></div>
+          <h1 class="modal-title fs-4 fw-semibold text-color-secondary" id="networkModalLabel"><i class="fa fa-solid fa-project-diagram"></i> Networking</h1>
+          <button type="button" class="btn-close m-0" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Build & Maitenance Fiber Optic Network. Network Design and Implementation
+        </div>
+        <div class="modal-footer justify-content-center">
+          <a class="btn btn-orange" href="https://wa.me/6282126696530" target="_blank">Hubungi Kami</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="itsolutionModal" tabindex="-1" aria-labelledby="itsolutionModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header justify-content-between">
+          <div></div>
+          <h1 class="modal-title fs-4 fw-semibold text-color-secondary" id="itsolutionModalLabel"><i class="fa fa-solid fa-code"></i> IT Solution</h1>
+          <button type="button" class="btn-close m-0" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Build & Maitenance Server. Web Development.
+        </div>
+        <div class="modal-footer justify-content-center">
+          <a class="btn btn-orange" href="https://wa.me/6282126696530" target="_blank">Hubungi Kami</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="pogModal" tabindex="-1" aria-labelledby="pogModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header justify-content-between">
+          <div></div>
+          <h1 class="modal-title fs-4 fw-semibold text-color-secondary" id="pogModalLabel"><i class="fa fa-solid fa-wrench"></i> Procurement of Goods</h1>
+          <button type="button" class="btn-close m-0" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Bill of Quantities. Procurement of items for operational business needs.
+        </div>
+        <div class="modal-footer justify-content-center">
+          <a class="btn btn-orange" href="https://wa.me/6282126696530" target="_blank">Hubungi Kami</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="taxModal" tabindex="-1" aria-labelledby="taxModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header justify-content-between">
+          <div></div>
+          <h1 class="modal-title fs-4 fw-semibold text-color-secondary" id="taxModalLabel"><i class="fa fa-solid fa-balance-scale"></i> Tax Consulting</h1>
+          <button type="button" class="btn-close m-0" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Tax Planning & Compliance.
+        </div>
+        <div class="modal-footer justify-content-center">
+          <a class="btn btn-orange" href="https://wa.me/6282126696530" target="_blank">Hubungi Kami</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- OUR PARTNERS -->
   <section class="py-5">
@@ -134,9 +214,9 @@
         Mitra Kami
       </h2>
       <div class="owl-carousel owl-theme owl-carousel-partners mt-4">
-        <div class="item">
+        <!-- <div class="item">
           <img class="client-logo" src="./assets/img/clients/adsa.png" />
-        </div>
+        </div> -->
         <div class="item">
           <img class="client-logo" src="./assets/img/clients/client-1.png" />
         </div>
@@ -149,7 +229,7 @@
         <div class="item">
           <img class="client-logo" src="./assets/img/clients/client-4.png" />
         </div>
-        <div class="item">
+        <!-- <div class="item">
           <img class="client-logo" src="./assets/img/clients/dfsd.png" />
         </div>
         <div class="item">
@@ -160,7 +240,7 @@
         </div>
         <div class="item">
           <img class="client-logo" src="./assets/img/clients/sdfds.png" />
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
