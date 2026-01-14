@@ -859,6 +859,18 @@ body.preloader-site {
   max-width: 250px;
 }
 
+.loading-dots::after {
+  content: '';
+  animation: loading-dots 1.5s steps(3, end) infinite;
+}
+
+@keyframes loading-dots {
+  0%   { content: ''; }
+  33%  { content: '.'; }
+  66%  { content: '..'; }
+  100% { content: '...'; }
+}
+
 /* =============== SCROLL ON TOP ================ */
 #scrollTopBtn {
     position: fixed;
