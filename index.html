@@ -221,9 +221,10 @@
 
   <!-- SERVICES -->
   <section id="services" data-aos="fade-up">
-    <h2 class="cta-strip section-title justify-content-center display-2 mb-0">Layanan</h2>
+    <h2 class="section-title text-center display-2 text-color-primary mb-0">Layanan <span class="text-color-tertiary">Naratas</span></h2>
+    <i class="fa-2xl fa-solid fa-ellipsis-h text-color-primary w-100 text-center mb-4"></i>
     <div class="row m-0">
-      <div class="col-md-3 col-6 p-0">
+      <div class="col-md-3 col-6 p-0" data-bs-toggle="modal" data-bs-target="#networkModal">
         <div class="box-services service-networking ratio ratio-1x1">
           <div class="text-white text-center align-content-center p-2">
             <i class="fa-2xl fa-solid fa-project-diagram"></i>
@@ -233,7 +234,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-3 col-6 p-0">
+      <div class="col-md-3 col-6 p-0" data-bs-toggle="modal" data-bs-target="#itsolutionModal">
         <div class="box-services service-it ratio ratio-1x1">
           <div class="text-white text-center align-content-center p-2">
             <i class="fa-2xl fa-solid fa-code"></i>
@@ -243,7 +244,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-3 col-6 p-0">
+      <div class="col-md-3 col-6 p-0" data-bs-toggle="modal" data-bs-target="#pogModal">
         <div class="box-services service-pog ratio ratio-1x1">
           <div class="text-white text-center align-content-center p-2">
             <i class="fa-2xl fa-solid fa-wrench"></i>
@@ -253,10 +254,10 @@
           </div>
         </div>
       </div>
-      <div class="col-md-3 col-6 p-0">
+      <div class="col-md-3 col-6 p-0" data-bs-toggle="modal" data-bs-target="#taxModal">
         <div class="box-services service-tax ratio ratio-1x1">
           <div class="text-white text-center align-content-center p-2">
-            <i class="fa-2xl fa-solid fa-gavel"></i>
+            <i class="fa-2xl fa-solid fa-balance-scale"></i>
             <div class="fw-bold fs-4 pt-2">
               Tax Consulting
             </div>
@@ -265,6 +266,75 @@
       </div>
     </div>
   </section>
+  <!-- MODAL Layanan -->
+  <div class="modal fade" id="networkModal" tabindex="-1" aria-labelledby="networkModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header justify-content-between">
+          <div></div>
+          <h1 class="modal-title fs-4 fw-semibold text-color-secondary" id="networkModalLabel"><i class="fa fa-solid fa-project-diagram"></i> Networking</h1>
+          <button type="button" class="btn-close m-0" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Build & Maitenance Fiber Optic Network. Network Design and Implementation
+        </div>
+        <div class="modal-footer justify-content-center">
+          <a class="btn btn-orange" href="https://wa.me/6282126696530" target="_blank">Hubungi Kami</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="itsolutionModal" tabindex="-1" aria-labelledby="itsolutionModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header justify-content-between">
+          <div></div>
+          <h1 class="modal-title fs-4 fw-semibold text-color-secondary" id="itsolutionModalLabel"><i class="fa fa-solid fa-code"></i> IT Solution</h1>
+          <button type="button" class="btn-close m-0" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Build & Maitenance Server. Web Development.
+        </div>
+        <div class="modal-footer justify-content-center">
+          <a class="btn btn-orange" href="https://wa.me/6282126696530" target="_blank">Hubungi Kami</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="pogModal" tabindex="-1" aria-labelledby="pogModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header justify-content-between">
+          <div></div>
+          <h1 class="modal-title fs-4 fw-semibold text-color-secondary" id="pogModalLabel"><i class="fa fa-solid fa-wrench"></i> Procurement of Goods</h1>
+          <button type="button" class="btn-close m-0" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Bill of Quantities. Procurement of items for operational business needs.
+        </div>
+        <div class="modal-footer justify-content-center">
+          <a class="btn btn-orange" href="https://wa.me/6282126696530" target="_blank">Hubungi Kami</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="taxModal" tabindex="-1" aria-labelledby="taxModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header justify-content-between">
+          <div></div>
+          <h1 class="modal-title fs-4 fw-semibold text-color-secondary" id="taxModalLabel"><i class="fa fa-solid fa-balance-scale"></i> Tax Consulting</h1>
+          <button type="button" class="btn-close m-0" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Tax Planning & Compliance.
+        </div>
+        <div class="modal-footer justify-content-center">
+          <a class="btn btn-orange" href="https://wa.me/6282126696530" target="_blank">Hubungi Kami</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- PARTNERSHIP -->
   <section>
@@ -276,7 +346,7 @@
         </div>
       </div>
       <div style="display: flex; gap: 10px">
-        <button class="btn btn-blue-primary">Hubungi Kami</button>
+        <a class="btn btn-blue-primary" href="https://wa.me/6282126696530" target="_blank">Hubungi Kami</a>
       </div>
     </div>
   </section>
@@ -731,7 +801,7 @@
   </footer>
 
   <!-- WHATSAPP FLOATING BUTTON -->
-  <a class="whatsapp-float" href="https://wa.me/6281234567890" target="_blank">
+  <a class="whatsapp-float" href="https://wa.me/6282126696530" target="_blank">
     <img src="./assets/img/whatsapp.png" alt="Whatsapp" class="img-fluid rounded-circle">
   </a>
   <button id="scrollTopBtn" aria-label="Scroll to top">
