@@ -11,6 +11,39 @@ window.addEventListener("scroll", function () {
     }
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector(".contact-wa-form");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // stop normal form submit
+
+    // get values
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const subject = document.getElementById("subject").value;
+    const message = document.querySelector("textarea[name='message']").value;
+
+    // format WhatsApp message
+    const whatsappMessage =
+      `Halo Naratas,\n\n` +
+      `Nama   : ${name}\n` +
+      `Email  : ${email}\n` +
+      `Subjek : ${subject}\n\n` +
+      `Pesan  :\n${message}`;
+
+    // encode message
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+
+    // WhatsApp URL
+    const phone = "6282126696530";
+    const url = `https://api.whatsapp.com/send?phone=${phone}&text=${encodedMessage}`;
+
+    // redirect to WhatsApp
+    window.open(url, "_blank");
+  });
+});
+
 $(".owl-carousel-partners").owlCarousel({
   loop: true,
   margin: 40,
